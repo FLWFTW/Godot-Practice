@@ -1,0 +1,52 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "ResourceFormatLoader",
+"class": "HTerrainDataLoader",
+"language": "GDScript",
+"path": "res://addons/zylann.hterrain/hterrain_resource_loader.gd"
+}, {
+"base": "ResourceFormatSaver",
+"class": "HTerrainDataSaver",
+"language": "GDScript",
+"path": "res://addons/zylann.hterrain/hterrain_resource_saver.gd"
+} ]
+_global_script_class_icons={
+"HTerrainDataLoader": "",
+"HTerrainDataSaver": ""
+}
+
+[application]
+
+config/name="StateMachine"
+run/main_scene="res://Main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
+IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
+RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
+UserData="*res://addons/github-integration/scripts/user_data.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "github-integration", "zylann.hterrain", "zylann.scatter" )
+
+[layer_names]
+
+3d_physics/layer_1="Environment"
+3d_physics/layer_2="Characters"
+3d_physics/layer_3="Objects"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

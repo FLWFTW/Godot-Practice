@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Vehicle/StateMachine/StateMachine.cs" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/WetGround2/Ground_Wet_002_basecolor.jpg" type="Texture" id=2]
+[ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Jeep/Jeep.tscn" type="PackedScene" id=6]
+[ext_resource path="res://TerrainData/data.hterrain" type="Resource" id=8]
+[ext_resource path="res://Assets/Textures/WetGround2/Ground_Wet_002_normal.jpg" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/WetGroundTracks/Ground_Wet_Tire_Tracks_001_basecolor.jpg" type="Texture" id=10]
+[ext_resource path="res://Assets/Textures/WetGround3/Ground_wet_003_basecolor.jpg" type="Texture" id=11]
+[ext_resource path="res://Assets/Textures/WetGroundTracks/Ground_Wet_Tire_Tracks_001_normal.jpg" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/WetGround3/Ground_wet_003_normal.jpg" type="Texture" id=13]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Jeep" parent="." instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0.0128533, 0 )
+script = ExtResource( 1 )
+
+[node name="Camera" type="Camera" parent="Jeep"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.242929, 0.642581, -0.127742 )
+
+[node name="Panel" type="Panel" parent="Jeep/Camera"]
+anchor_right = 0.606
+margin_right = -521.544
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gear" type="Label" parent="Jeep/Camera/Panel"]
+margin_right = 100.0
+margin_bottom = 39.0
+text = "Gear"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="Jeep/Camera"]
+margin_left = 3.0
+margin_top = 558.167
+margin_right = 108.0
+margin_bottom = 598.167
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed" type="Label" parent="Jeep/Camera/Panel2"]
+margin_left = 1.37616
+margin_top = 0.729919
+margin_right = 101.376
+margin_bottom = 39.7299
+text = "Speed"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="HTerrain" type="Spatial" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -256, 0, -256 )
+script = ExtResource( 3 )
+collision_enabled = true
+ambient_wind = 0.0
+lod_scale = 2.0
+custom_globalmap_shader = null
+map_scale = Vector3( 1, 1, 1 )
+_terrain_data = ExtResource( 8 )
+chunk_size = 32
+shader_type = "Classic4"
+custom_shader = null
+shader_params/u_ground_uv_scale_per_texture = Plane( 2, 2, 2, 25 )
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = true
+shader_params/u_globalmap_blend_start = 0.0
+shader_params/u_globalmap_blend_distance = 0.0
+shader_params/u_colormap_opacity_per_texture = Plane( 1, 1, 1, 1 )
+ground/albedo_bump_0 = ExtResource( 2 )
+ground/normal_roughness_0 = ExtResource( 9 )
+ground/albedo_bump_1 = ExtResource( 11 )
+ground/normal_roughness_1 = ExtResource( 13 )
+ground/albedo_bump_2 = ExtResource( 10 )
+ground/normal_roughness_2 = ExtResource( 12 )
+ground/albedo_bump_3 = null
+ground/normal_roughness_3 = null
