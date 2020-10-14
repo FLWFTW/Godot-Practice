@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/JeepSteeringWheel.obj-28d1e9cbdd12c4e90b5e8621f33acc97.mesh"
+
+[deps]
+
+files=[ "res://.import/JeepSteeringWheel.obj-28d1e9cbdd12c4e90b5e8621f33acc97.mesh" ]
+
+source_file="res://Assets/Jeep/JeepSteeringWheel.obj"
+dest_files=[ "res://.import/JeepSteeringWheel.obj-28d1e9cbdd12c4e90b5e8621f33acc97.mesh", "res://.import/JeepSteeringWheel.obj-28d1e9cbdd12c4e90b5e8621f33acc97.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
